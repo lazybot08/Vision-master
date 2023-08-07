@@ -1,0 +1,629 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+}
+/*utility classes*/
+.container{
+    border-radius: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left : 2px solid  white;
+    border-top: 2px solid  white;;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5);
+    transform: perspective(1000px);
+    transition: transform 30ms;
+}
+
+
+/*home header styling*/
+.home-header{
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: fixed;
+    left: 0;
+    overflow: hidden;
+}
+#background-1{
+    position: absolute;
+    background: rgb(251, 85, 85);
+    box-shadow: 0 0 2rem red;
+    border-radius: 50%;
+    width: 30rem;
+    height: 30rem;
+    top: -15rem;
+    left: -10rem;
+    z-index: -1;
+}
+#background-2{
+    position: absolute;
+    background: rgb(85, 121, 251);
+    box-shadow: 0 0 2rem rgb(26, 76, 255);
+    border-radius: 50%;
+    width: 35rem;
+    height: 35rem;
+    bottom: 12rem;
+    right: -10rem;
+    z-index: -1;
+}
+#background-3{
+    position: absolute;
+    background: rgb(234, 85, 251);
+    box-shadow: 0 0 2rem rgb(230, 0, 255);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    top: 25rem;
+    left: 10rem;
+    z-index: -1;
+}
+/* home header button styling */
+/*buttons scale transition*/
+.explore-btn button{
+    padding: 1rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(243, 104, 229);
+    box-shadow: 0 0 15px rgb(243, 104, 229);
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    scale:1;
+    transition: scale 1s;
+}
+.explore-btn button:hover{
+    scale: 1.2;
+}
+/*buttons border transition*/
+.explore-btn button::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom:3rem;          
+    right:10rem;
+    left: 0;
+    border-top:3px solid rgb(243, 104, 229);
+    border-left:3px solid rgb(243, 104, 229);
+    transition: all 1s;
+}
+.explore-btn button::after{
+    content:"";
+    position: absolute;
+    top: 2.9rem;
+    bottom:0;
+    right:0;
+    left: 7.4rem;
+    border-bottom:3px solid rgb(243, 104, 229);
+    border-right:3px solid rgb(243, 104, 229);
+    transition: all 1s;
+}
+.explore-btn button:hover::before{
+    display: block;
+    border-top:3px solid white;
+    border-left:3px solid white;
+    bottom:1rem;          
+    right:3rem;
+}
+.explore-btn button:hover::after{
+    display: block;
+    border-bottom:3px solid white;
+    border-right:3px solid white;
+    top: 1rem;         
+    left: 3rem;
+}
+/*back button styling*/
+.back-btn{
+    padding: 1rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(243, 104, 229);
+    box-shadow: 0 0 15px rgb(243, 104, 229);
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    scale:1;
+    transition: scale 1s;
+}
+.back-btn:hover{
+    scale: 1.2;
+}
+.back-btn a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    z-index: 10;
+}
+/*back button border styling*/
+.back-btn::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom:3rem;          
+    right:10rem;
+    left: 0;
+    border-top:3px solid rgb(243, 104, 229);
+    border-left:3px solid rgb(243, 104, 229);
+    transition: all 1s;
+}
+.back-btn::after{
+    content:"";
+    position: absolute;
+    top: 2.9rem;
+    bottom:0;
+    right:0;
+    left: 7.4rem;
+    border-bottom:3px solid rgb(243, 104, 229);
+    border-right:3px solid rgb(243, 104, 229);
+    transition: all 1s;
+}
+.back-btn:hover::before{
+    display: block;
+    border-top:3px solid white;
+    border-left:3px solid white;
+    bottom:1rem;          
+    right:3rem;
+}
+.back-btn:hover::after{
+    display: block;
+    border-bottom:3px solid white;
+    border-right:3px solid white;
+    top: 1rem;         
+    left: 3rem;
+}
+.header-content{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 80vh;
+    padding: 2rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.header-img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    border-radius: 4rem;
+    overflow: hidden;
+}
+.header-img img{
+    width: 100%;
+}
+.header-content h3{
+    position: absolute;
+    top: 23rem;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+.header-content p{
+    position: absolute;
+    top: 27rem;
+    padding: 0 3rem;
+    color: white;
+}
+.buttons{
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+}
+
+
+/*About us introduction on Homepage styling*/
+.about_container{                     /* importance of this container is to add the scroll bar  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -10;   
+    /* border: 5px solid rgb(206, 35, 35); */
+    overflow-x: hidden;
+    background: grey;
+}
+.footer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -5;
+}
+.services_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    color: white;
+}
+.services_container h2{
+    position: absolute;
+    top: 4rem;
+    font-size: 2rem;
+    margin: 0, auto;
+}
+.services{
+    position: absolute;
+    top: 6rem;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.service{
+    width: 16rem;
+    height: 30rem;
+    padding: 1rem;
+    position: relative;
+    padding: 2rem;
+}
+
+.service h3{
+    position: absolute;
+    top: 2rem;
+    margin: 0, auto;
+}
+.service img{
+    position: absolute;
+    top: 5rem;
+    width: 10rem;
+    height: 10rem;
+    margin: 0, auto;
+}
+.service p{
+    position: absolute;
+    top: 15rem;
+    text-align: center;
+    margin: 0, auto;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+}
+/*back to header button styling */
+.back_to_header{
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    border-radius: 4rem;
+    overflow: hidden;
+    border: 1px solid white;
+    background: rgb(119, 0, 255);
+}
+.back_to_header button{
+    border: none;
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    background: transparent;
+    transition: opacity 2s;
+}
+
+.layer_1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: -1;
+    justify-content: center;
+    background: black;
+    overflow: hidden;
+    border-right: 3px solid white;
+}
+#layer_1_bg_1{
+    position: absolute;
+    background: rgba(101, 255, 139);
+    box-shadow: 0 0 3rem rgb(0, 255, 64);
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    bottom: -2rem;
+    left: -5rem;
+    z-index: -1;
+}
+#layer_1_bg_2{
+    position: absolute;
+    background: rgb(101, 255, 242);
+    box-shadow: 0 0 2rem rgb(0, 255, 234);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    top: -8rem;
+    left: -2rem;
+    z-index: -1;
+}
+#layer_1_bg_3{
+    position: absolute;
+    background: rgb(253, 114, 255);
+    box-shadow: 0 0 2rem rgb(251, 0, 255);
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    top: 5rem;
+    right: 20rem;
+    z-index: -1;
+}
+#layer_1_bg_4{
+    position: absolute;
+    background: rgb(255, 112, 112);
+    box-shadow: 0 0 2rem rgb(255, 0, 0);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    bottom: 35rem;
+    right: -5rem;
+    z-index: -1;
+}
+.layer_2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    z-index: -2;
+    justify-content: center;
+    overflow: hidden;
+    border-left: 3px solid white;
+}
+#layer_2_bg_1{
+    position: absolute;
+    background: rgb(255, 160, 101);
+    box-shadow: 0 0 3rem rgb(255, 98, 0);
+    border-radius: 50%;
+    width: 30rem;
+    height: 30rem;
+    bottom: -10rem;
+    left: 60rem;
+    z-index: -1;
+}
+#layer_2_bg_2{
+    position: absolute;
+    background: rgb(101, 255, 142);
+    box-shadow: 0 0 2rem rgb(0, 255, 68);
+    border-radius: 50%;
+    width: 18rem;
+    height: 18rem;
+    top: -5rem;
+    left: 5rem;
+    z-index: -1;
+}
+#layer_2_bg_3{
+    position: absolute;
+    background: rgb(253, 114, 255);
+    box-shadow: 0 0 2rem rgb(251, 0, 255);
+    border-radius: 50%;
+    width: 14rem;
+    height: 14rem;
+    top: -7rem;
+    right: -2rem;
+    z-index: -1;
+}
+#layer_2_bg_4{
+    position: absolute;
+    background: rgb(255, 112, 112);
+    box-shadow: 0 0 2rem rgb(255, 0, 0);
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    top: 30rem;
+    left: -5rem;
+    z-index: -1;
+}
+
+.layer_3{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    z-index: -3;
+    justify-content: center;
+    overflow: hidden;
+    border-right: 3px solid white;
+}
+#layer_3_bg_1{
+    position: absolute;
+    background: rgb(191, 101, 255);
+    box-shadow: 0 0 2rem rgb(149, 0, 255);
+    border-radius: 50%;
+    width: 25rem;
+    height: 25rem;
+    bottom: -4rem;
+    left: -10rem;
+    z-index: -1;
+}
+#layer_3_bg_2{
+    position: absolute;
+    background: rgb(255, 244, 126);
+    box-shadow: 0 0 2rem rgb(255, 235, 17);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    top: 30rem;
+    right: 5rem;
+    z-index: -1;
+}
+#layer_3_bg_3{
+    position: absolute;
+    background: rgb(119, 255, 114);
+    box-shadow: 0 0 2rem rgb(9, 255, 0);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    top: -7rem;
+    right: 35rem;
+    z-index: -1;
+}
+
+
+.client_project_container{
+    display: flex;
+    position: relative;
+    top: 5rem;
+    width: 75vw;
+    height: 80vh;
+    color: white;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    border-radius: 4rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.clients{
+    width: 50%;
+}
+.projects{
+    width: 50%;
+    /* display: none; */
+}
+.clients h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.client_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid grey; */
+}
+.client{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5rem;
+    height: 5rem;
+}
+.client img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.projects h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.projects ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project{
+    list-style: none;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+
+
+
+
+.faq_container{
+    position: relative;
+    top: 5rem;
+    width: 70rem;
+    height: 35rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3rem;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.faq_container h2{
+    position: absolute;
+    width: 70rem;
+    text-align: center;
+    top: 2rem;
+    margin: 0 auto;
+}
+.faqs{
+    position: absolute;
+    top: 5rem;
+    width: 70rem;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid white; */
+}
+.faq{
+    width: 90%;
+    display: flex;
+    margin: 1rem auto;
+    /* border: 1px solid white; */
+}
+.QnA{
+    width: 60rem;
+    background: rgb(132, 0, 255);
+    padding: 1rem;
+    /* border: 1px solid white; */
+}
+.add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.8rem;
+    background: rgb(132, 0, 255);
+    user-select: none;
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+.remove{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 2.8rem;
+    background: rgb(132, 0, 255);
+    user-select: none;
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+.answer{
+    display: none;
+    margin: 1rem 0;
+    background: rgb(78, 0, 150);
+    padding: 1.4rem;
+}
+
+.canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: grey;
+    width: 100%;
+    height: 100%;
+}
